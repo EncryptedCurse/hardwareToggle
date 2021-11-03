@@ -1,0 +1,21 @@
+﻿<Window x:Class="hardwareToggle.ErrorMessageBox"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Error"
+        SizeToContent="Height" Width="400"
+        ResizeMode="CanMinimize"
+        WindowStartupLocation="CenterScreen">
+    <Border Padding="{Binding Source={StaticResource Padding}}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition Height="{StaticResource ButtonRowHeight}" />
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Name="MessageTextBlock" TextWrapping="Wrap" FontSize="13" Margin="0,8,0,28" />
+            <Button Grid.Row="1" Name="OKButton" Click="OKButton_Clicked" Content="OK" />
+        </Grid>
+    </Border>
+</Window>
