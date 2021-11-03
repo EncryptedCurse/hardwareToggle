@@ -16,7 +16,7 @@
                 <!-- x --> <RowDefinition Height="{Binding Source={StaticResource Padding}}" />
                 <!-- 4 --> <RowDefinition Height="{StaticResource ButtonRowHeight}" />
             </Grid.RowDefinitions>
-            <TextBlock Grid.Row="0" Name="DeviceCountLabel" Margin="0,-8,0,0" />
+            <TextBlock Grid.Row="0" Name="DeviceCountTextBlock" Margin="0,-8,0,0" />
             <ListView Grid.Row="2" Name="FoundDevicesListView" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                 <ListView.View>
                     <GridView>
