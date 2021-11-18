@@ -16,8 +16,8 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <Nullable>enable</Nullable>
     <TargetFrameworkProfile />
+    <NuGetPackageImportStamp />
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -32,8 +32,6 @@
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -87,52 +85,53 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <ApplicationDefinition Include="App.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </ApplicationDefinition>
-    <Compile Include="BrowseDialog.xaml.cs">
-      <DependentUpon>BrowseDialog.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="MessageBox\ErrorMessageBox.xaml.cs">
-      <DependentUpon>ErrorMessageBox.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="MessageBox\DeviceListMessageBox.xaml.cs">
-      <DependentUpon>DeviceListMessageBox.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="DeviceStateHandler.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Page Include="MessageBox\ErrorMessageBox.xaml">
+    <Page Include="Resources\ResourceDictionary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ConfigureDialog.xaml">
+    <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
+    </ApplicationDefinition>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ConfigureDialog.xaml.cs">
-      <DependentUpon>ConfigureDialog.xaml</DependentUpon>
+    <Page Include="ConfigureWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="ConfigureWindow.xaml.cs">
+      <DependentUpon>ConfigureWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Page Include="BrowseDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Resources\ResourceDictionary.xaml">
+    <Compile Include="BrowseDialog.xaml.cs">
+      <DependentUpon>BrowseDialog.xaml</DependentUpon>
+    </Compile>
+    <Page Include="MsgBox\ErrorMsgBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MessageBox\DeviceListMessageBox.xaml">
+    <Compile Include="MsgBox\ErrorMsgBox.xaml.cs">
+      <DependentUpon>ErrorMsgBox.xaml</DependentUpon>
+    </Compile>
+    <Page Include="MsgBox\DeviceListMsgBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Compile Include="MsgBox\DeviceListMsgBox.xaml.cs">
+      <DependentUpon>DeviceListMsgBox.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -146,6 +145,7 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <None Include="app.manifest" />
     <None Include="Properties\Settings.settings">
@@ -169,22 +169,18 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\BrowseIcon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\ClearIcon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\RefreshIcon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\DisabledTrayIcon.ico" />
+    <None Include="Resources\AppIcon.ico" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\EnabledTrayIcon.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\AppIcon.ico" />
+    <None Include="Resources\DisabledTrayIcon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="ModernWpfUI">
+      <Version>0.9.4</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

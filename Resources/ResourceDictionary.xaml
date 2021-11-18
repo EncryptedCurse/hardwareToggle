@@ -2,21 +2,27 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
     <sys:Double x:Key="Padding">12</sys:Double>
-    <sys:Double x:Key="ButtonFontSize">13</sys:Double>
-    <GridLength x:Key="ButtonRowHeight">36</GridLength>
-    <Style TargetType="Button">
-        <Setter Property="FontSize" Value="{StaticResource ButtonFontSize}" />
+    <sys:Double x:Key="RowHeight">36</sys:Double>
+    <FontFamily x:Key="MonospaceFontFamily">Consolas</FontFamily>
+    <sys:Double x:Key="MonospaceFontSize">15</sys:Double>
+    <Style TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+        <Setter Property="Height" Value="{StaticResource RowHeight}" />
     </Style>
-    <Style TargetType="ComboBox">
-        <Setter Property="FontSize" Value="{StaticResource ButtonFontSize}" />
+    <Style x:Key="AccentButton" TargetType="Button" BasedOn="{StaticResource AccentButtonStyle}">
+        <Setter Property="Height" Value="{StaticResource RowHeight}" />
     </Style>
-    <Style TargetType="Label">
-        <Setter Property="FontSize" Value="{StaticResource ButtonFontSize}" />
+    <Style TargetType="ComboBox" BasedOn="{StaticResource {x:Type ComboBox}}">
+        <Setter Property="Height" Value="{StaticResource RowHeight}" />
     </Style>
-    <Style TargetType="TextBlock">
-        <Setter Property="FontSize" Value="{StaticResource ButtonFontSize}" />
+    <Style TargetType="TextBox" BasedOn="{StaticResource {x:Type TextBox}}">
+        <Setter Property="Height" Value="{StaticResource RowHeight}" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
     </Style>
-    <Style TargetType="ListView">
-        <Setter Property="SelectionMode" Value="Single" />
+    <Style x:Key="DescriptionTextBlock" TargetType="TextBlock" BasedOn="{StaticResource BaseTextBlockStyle}">
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+    <Style x:Key="MonospaceTextBlock" TargetType="TextBlock" BasedOn="{StaticResource {x:Type TextBlock}}">
+        <Setter Property="FontFamily" Value="{StaticResource MonospaceFontFamily}" />
+        <Setter Property="FontSize" Value="{StaticResource MonospaceFontSize}" />
     </Style>
 </ResourceDictionary>

@@ -1,0 +1,27 @@
+﻿<Window x:Class="hardwareToggle.ErrorMsgBox"
+        ui:WindowHelper.UseModernWindowStyle="True"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ui="http://schemas.modernwpf.com/2019"
+        Title="Error"
+        SizeToContent="Height"
+        Width="400"
+        ResizeMode="CanMinimize"
+        WindowStartupLocation="CenterScreen"
+        DataContext="{Binding RelativeSource={RelativeSource Self}}">
+    <Border Padding="{Binding Source={StaticResource Padding}, Mode=OneTime}">
+        <ui:SimpleStackPanel Spacing="24">
+            <TextBlock Name="MessageTextBlock" TextWrapping="Wrap">
+                <Run Text="{Binding Message1, Mode=OneTime}" />
+                <Run Text="{Binding Message2, Mode=OneTime}"
+                     FontFamily="{StaticResource MonospaceFontFamily}"
+                     FontSize="{StaticResource MonospaceFontSize}" />
+            </TextBlock>
+            <Button Name="OKButton"
+                    IsCancel="True"
+                    Content="OK"
+                    HorizontalAlignment="Stretch"
+                    Style="{StaticResource AccentButton}" />
+        </ui:SimpleStackPanel>
+    </Border>
+</Window>
