@@ -5,7 +5,7 @@
     <Setting Name="deviceId" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="useInstancePath" Type="System.Boolean" Scope="User">
+    <Setting Name="isInstancePath" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="deviceEnabled" Type="System.Boolean" Scope="User">

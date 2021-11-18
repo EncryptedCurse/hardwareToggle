@@ -38,12 +38,12 @@ namespace hardwareToggle.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool useInstancePath {
+        public bool isInstancePath {
             get {
-                return ((bool)(this["useInstancePath"]));
+                return ((bool)(this["isInstancePath"]));
             }
             set {
-                this["useInstancePath"] = value;
+                this["isInstancePath"] = value;
             }
         }
         
