@@ -5,7 +5,13 @@ using HardwareManagementLib;
 namespace hardwareToggle {
     public partial class BrowseDialog : Window {
         public bool ShowInstancePath { get; private set; }
-        public List<Device> DeviceList => ConfigManager.GetAllDevices();
+        public List<Device> DeviceList {
+            get {
+                List<Device> allDevices = ConfigManager.GetAllDevices();
+                allDevices.RemoveAll(device => string.IsNullOrWhiteSpace(ShowInstancePath ? device.instancePath : device.hardwareId));
+                return allDevices;
+            }
+        }
         public Device SelectedDevice { get; private set; }
 
         public BrowseDialog(bool showInstancePath) {
